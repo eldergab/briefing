@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9; /* Fundo claro, estilo Google Forms */
+            background-color: #f4f4f9;
             padding: 20px;
             display: flex;
             justify-content: center;
@@ -21,7 +21,7 @@
         }
 
         .header {
-            background-color: #673AB7; /* Cor roxa (pode ser personalizada) */
+            background-color: #673AB7;
             color: white;
             padding: 20px;
             border-top-left-radius: 8px;
@@ -32,7 +32,7 @@
             background-color: white;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave, estilo Forms */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
 
@@ -111,44 +111,41 @@
 <div class="container">
     <div class="header">
         <h1>Briefing para Criação de E-commerce de Óculos</h1>
-        <p>Preencha este formulário para nos dar todos os detalhes do seu projeto de loja virtual.</p>
+        <p>Preencha este formulário e clique em "Baixar Briefing TXT". Você precisará enviar o arquivo baixado para a pessoa que fará seu site.</p>
     </div>
 
-    <form class="form-card" action="https://formspree.io/f/MOCK_ID_DO_FORMSPREE" method="POST">
-        <p class="instruction">
-            **Atenção:** Mude o campo `action` acima para o seu próprio link do Formspree.
-        </p>
-
+    <form class="form-card" id="briefingForm"> 
+        
         <h2>I. Informações Essenciais</h2>
         
         <label for="nome-marca" class="required">1. Nome da Marca/Empresa</label>
-        <input type="text" id="nome-marca" name="Nome da Marca" required>
+        <input type="text" id="nome-marca" name="1. Nome da Marca" required>
 
         <label for="produtos" class="required">2. O que o site irá vender? (Liste os principais produtos)</label>
-        <textarea id="produtos" name="Produtos Vendidos" required></textarea>
+        <textarea id="produtos" name="2. Produtos Vendidos" required></textarea>
 
         <label for="publico" class="required">3. Quem é o público-alvo?</label>
-        <input type="text" id="publico" name="Público Alvo" placeholder="Ex: Mulheres, 25 a 40 anos, de classe B/C" required>
+        <input type="text" id="publico" name="3. Público Alvo" placeholder="Ex: Mulheres, 25 a 40 anos, de classe B/C" required>
 
         <label for="diferencial" class="required">4. Qual o principal diferencial da loja?</label>
-        <textarea id="diferencial" name="Diferencial" placeholder="Ex: Foco em óculos polarizados, 1 ano de garantia, preço baixo, modelos exclusivos." required></textarea>
+        <textarea id="diferencial" name="4. Diferencial" placeholder="Ex: Foco em óculos polarizados, 1 ano de garantia, preço baixo, modelos exclusivos." required></textarea>
 
         <h2>II. Funcionalidades e Tecnologia</h2>
 
         <label for="plataforma" class="required">5. Qual a plataforma de e-commerce preferida?</label>
-        <select id="plataforma" name="Plataforma E-commerce" required>
+        <select id="plataforma" name="5. Plataforma E-commerce" required>
             <option value="">Selecione...</option>
             <option value="Nuvemshop">Nuvemshop</option>
             <option value="Shopify">Shopify</option>
             <option value="WooCommerce">WooCommerce (WordPress)</option>
-            <option value="Outra">Outra (especificar na próxima pergunta)</option>
+            <option value="Outra">Outra</option>
         </select>
         
         <label for="pagamento" class="required">6. Quais meios de pagamento são obrigatórios?</label>
-        <input type="text" id="pagamento" name="Meios de Pagamento" placeholder="Ex: PIX, Boleto e Cartão de Crédito (via Nuvem Pago/Mercado Pago)" required>
+        <input type="text" id="pagamento" name="6. Meios de Pagamento" placeholder="Ex: PIX, Boleto e Cartão de Crédito" required>
 
         <label for="provador-virtual" class="required">7. O site precisa de Provador Virtual de Óculos?</label>
-        <select id="provador-virtual" name="Provador Virtual" required>
+        <select id="provador-virtual" name="7. Provador Virtual" required>
             <option value="">Selecione...</option>
             <option value="Sim_Obrigatorio">Sim, é obrigatório</option>
             <option value="Sim_Opcional">Sim, mas é opcional se o custo for alto</option>
@@ -156,38 +153,75 @@
         </select>
         
         <label for="integracoes">8. O site precisa de integração com outras ferramentas?</label>
-        <textarea id="integracoes" name="Integrações" placeholder="Ex: Instagram Shopping, botão flutuante de WhatsApp, Ferramenta de E-mail Marketing, ERP/Estoque."></textarea>
+        <textarea id="integracoes" name="8. Integrações" placeholder="Ex: Instagram Shopping, botão flutuante de WhatsApp, Ferramenta de E-mail Marketing, ERP/Estoque."></textarea>
 
 
         <h2>III. Design e Referências</h2>
 
         <label for="cores" class="required">9. Quais são as cores principais da marca?</label>
-        <input type="text" id="cores" name="Cores da Marca" placeholder="Ex: Preto, Branco e um toque de Rosa Dourado" required>
+        <input type="text" id="cores" name="9. Cores da Marca" placeholder="Ex: Preto, Branco e um toque de Rosa Dourado" required>
 
         <label for="estilo" class="required">10. Qual o estilo visual desejado para o site?</label>
-        <input type="text" id="estilo" name="Estilo Visual" placeholder="Ex: Minimalista e Elegante / Moderno e Descolado" required>
+        <input type="text" id="estilo" name="10. Estilo Visual" placeholder="Ex: Minimalista e Elegante / Moderno e Descolado" required>
 
         <label for="links-gosta" class="required">11. Envie 3 links de lojas virtuais que sua filha **gosta** (Layout, Cores, Organização):</label>
-        <textarea id="links-gosta" name="Links de Referência (Positivo)" placeholder="Ex: https://lojaa.com.br, https://lojaab.com.br, https://lojac.com.br" required></textarea>
+        <textarea id="links-gosta" name="11. Links de Referência (Positivo)" placeholder="Ex: https://lojaa.com.br, https://lojaab.com.br, https://lojac.com.br" required></textarea>
         
         <label for="links-nao-gosta">12. Envie 1 link de loja virtual que ela **NÃO gosta** (Para evitar erros):</label>
-        <input type="text" id="links-nao-gosta" name="Links de Referência (Negativo)">
+        <input type="text" id="links-nao-gosta" name="12. Links de Referência (Negativo)">
         
         <h2>IV. Orçamento e Prazos</h2>
         
         <label for="orcamento" class="required">13. Qual o orçamento para a criação/configuração inicial do site?</label>
-        <input type="text" id="orcamento" name="Orçamento Inicial" placeholder="Ex: R$ 3.000 (Sem contar mensalidades da plataforma/apps)" required>
+        <input type="text" id="orcamento" name="13. Orçamento Inicial" placeholder="Ex: R$ 3.000" required>
 
         <label for="prazo-final" class="required">14. Qual o prazo máximo de entrega desejado?</label>
-        <input type="text" id="prazo-final" name="Prazo de Entrega" placeholder="Ex: 45 dias / Final do mês que vem" required>
+        <input type="text" id="prazo-final" name="14. Prazo de Entrega" placeholder="Ex: 45 dias / Final do mês que vem" required>
         
-        <label for="contato" class="required">15. Contato para Retorno (Seu e-mail)</label>
-        <input type="email" id="contato" name="_replyto" placeholder="seu.email@exemplo.com" required>
+        <label for="contato" class="required">15. Contato da Pessoa que Preencheu (E-mail)</label>
+        <input type="email" id="contato" name="15. E-mail para Contato" placeholder="email@exemplo.com" required>
 
-        <button type="submit">Enviar Briefing</button>
+        <button type="submit">Baixar Briefing TXT</button>
     </form>
 
 </div>
+
+<script>
+    document.getElementById('briefingForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
+
+        const form = e.target;
+        let data = "--- Briefing E-commerce Óculos ---\n\n";
+
+        // Itera sobre todos os elementos do formulário
+        Array.from(form.elements).forEach(element => {
+            // Ignora o botão de submit e outros elementos que não são inputs de dados
+            if (element.name && element.type !== 'submit') {
+                const labelElement = document.querySelector(`label[for="${element.id}"]`);
+                const labelText = labelElement ? labelElement.textContent.replace(' *', '').trim() : element.name;
+                let value = element.value;
+
+                // Formata a saída
+                data += `${labelText}:\n${value}\n\n`;
+            }
+        });
+
+        // Cria o blob e o link de download
+        const filename = `Briefing_Oculos_${new Date().toLocaleDateString('pt-BR').replace(/\//g, '-')}.txt`;
+        const blob = new Blob([data], { type: 'text/plain' });
+
+        // Cria um link temporário para iniciar o download
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        // Alerta opcional para instruir o usuário
+        alert("O arquivo TXT com as respostas foi baixado! Por favor, envie este arquivo para a equipe que fará o seu site.");
+    });
+</script>
 
 </body>
 </html>
