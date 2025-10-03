@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Briefing para Criação de E-commerce de Óculos</title>
     <style>
+        /* Estilos Básicos */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f9;
-            padding: 20px;
+            padding: 10px; /* Reduz o padding geral para mobile */
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -17,7 +18,7 @@
         .container {
             max-width: 700px;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 15px; /* Reduz o margin-top */
         }
 
         .header {
@@ -30,14 +31,14 @@
 
         .form-card {
             background-color: white;
-            padding: 30px;
+            padding: 20px; /* Reduz o padding interno para mobile */
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 22px; /* Ajuste para mobile */
             margin: 0;
             margin-bottom: 5px;
         }
@@ -45,27 +46,27 @@
         h2 {
             font-size: 18px;
             color: #333;
-            border-bottom: 2px solid #25D366; /* Cor do WhatsApp */
+            border-bottom: 2px solid #25D366;
             padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
         }
 
         label {
             display: block;
-            margin-top: 15px;
+            margin-top: 10px; /* Ajuste de margem */
             margin-bottom: 5px;
             font-weight: bold;
             color: #333;
         }
 
         input[type="text"], input[type="email"], textarea, select {
-            width: 95%;
+            width: 98%; /* Ajustado para 98% para evitar overflow em algumas bordas */
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            transition: border-color 0.3s;
+            box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura total */
         }
 
         input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
@@ -76,18 +77,20 @@
 
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px; /* Altura mínima menor para mobile */
         }
         
         button {
-            background-color: #25D366; /* Cor do WhatsApp */
+            background-color: #25D366;
             color: white;
             padding: 12px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            width: 100%; /* Botão com largura total no mobile */
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -97,6 +100,20 @@
         .required::after {
             content: " *";
             color: red;
+        }
+
+        /* Regras de Responsividade - Media Query */
+        /* Garante que o padding interno seja maior em telas grandes */
+        @media (min-width: 600px) {
+            .form-card {
+                padding: 30px;
+            }
+            button {
+                width: auto; /* Botão volta a ter largura automática no desktop */
+            }
+            input[type="text"], input[type="email"], textarea, select {
+                width: 95%; /* Volta para 95% para telas maiores */
+            }
         }
     </style>
 </head>
@@ -185,18 +202,21 @@
         e.preventDefault(); // Impede o envio padrão do formulário
 
         // 1. **DEFINA SEU NÚMERO DE TELEFONE AQUI** (com código do país e DDD, sem espaços ou caracteres)
-        const SEU_NUMERO_WHATSAPP = "5562995436635"; // Exemplo: 55 (Brasil) 62 (DDD) 999999999 (número)
+        const SEU_NUMERO_WHATSAPP = "SEU_NUMERO_AQUI"; // Substitua por seu número (ex: "5562999999999")
         // ------------------------------------------------------------------------------------------------
+        
+        if (SEU_NUMERO_WHATSAPP === "SEU_NUMERO_AQUI") {
+            alert("ERRO: Por favor, edite o código HTML e insira seu número de WhatsApp no campo SEU_NUMERO_WHATSAPP.");
+            return;
+        }
 
         const form = e.target;
         let message = `*RESUMO DO BRIEFING - E-COMMERCE DE ÓCULOS*\n\n`;
 
         // Coleta o nome do contato primeiro para o título da mensagem
-        const nomeContato = document.getElementById('nome-contato').value || "Cliente";
+        const nomeContato = document.getElementById('nome-contato').value.trim() || "Cliente";
         message += `*Enviado por: ${nomeContato}*\n\n`;
         
-        let sectionTitle = "";
-
         // Itera sobre todos os elementos do formulário
         Array.from(form.elements).forEach(element => {
             if (element.name && element.type !== 'submit') {
@@ -204,9 +224,8 @@
                 const labelText = labelElement ? labelElement.textContent.replace(' *', '').trim() : element.name;
                 const value = element.value.trim() || 'Não Informado';
 
-                // Verifica se o texto da label indica uma nova seção para formatar melhor
+                // Adiciona quebra de linha para separar visualmente as seções
                 if (labelText.startsWith('I.') || labelText.startsWith('II.') || labelText.startsWith('III.') || labelText.startsWith('IV.')) {
-                    // Adiciona quebra de linha para separar visualmente as seções
                     message += "\n";
                 }
                 
@@ -226,8 +245,6 @@
 
         // Abre a nova janela/aba do WhatsApp
         window.open(whatsappUrl, '_blank');
-        
-        alert("O WhatsApp será aberto com o briefing preenchido. Você só precisa clicar em enviar!");
     });
 </script>
 
