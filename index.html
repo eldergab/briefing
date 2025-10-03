@@ -21,7 +21,7 @@
         }
 
         .header {
-            background-color: #673AB7;
+            background-color: #25D366; /* Cor do WhatsApp */
             color: white;
             padding: 20px;
             border-top-left-radius: 8px;
@@ -45,7 +45,7 @@
         h2 {
             font-size: 18px;
             color: #333;
-            border-bottom: 2px solid #673AB7;
+            border-bottom: 2px solid #25D366; /* Cor do WhatsApp */
             padding-bottom: 5px;
             margin-top: 30px;
             margin-bottom: 20px;
@@ -69,9 +69,9 @@
         }
 
         input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-            border-color: #673AB7;
+            border-color: #25D366;
             outline: none;
-            box-shadow: 0 0 0 1px #673AB7;
+            box-shadow: 0 0 0 1px #25D366;
         }
 
         textarea {
@@ -80,7 +80,7 @@
         }
         
         button {
-            background-color: #673AB7;
+            background-color: #25D366; /* Cor do WhatsApp */
             color: white;
             padding: 12px 20px;
             border: none;
@@ -91,18 +91,12 @@
         }
 
         button:hover {
-            background-color: #552a9e;
+            background-color: #1aae55;
         }
         
         .required::after {
             content: " *";
             color: red;
-        }
-
-        .instruction {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -111,11 +105,14 @@
 <div class="container">
     <div class="header">
         <h1>Briefing para Criação de E-commerce de Óculos</h1>
-        <p>Preencha este formulário e clique em "Baixar Briefing TXT". Você precisará enviar o arquivo baixado para a pessoa que fará seu site.</p>
+        <p>Preencha este formulário e clique em "Enviar via WhatsApp". A mensagem será gerada automaticamente.</p>
     </div>
 
     <form class="form-card" id="briefingForm"> 
         
+        <label for="nome-contato" class="required">Seu Nome / Nome da Empresa</label>
+        <input type="text" id="nome-contato" name="Nome do Contato" required>
+
         <h2>I. Informações Essenciais</h2>
         
         <label for="nome-marca" class="required">1. Nome da Marca/Empresa</label>
@@ -125,10 +122,10 @@
         <textarea id="produtos" name="2. Produtos Vendidos" required></textarea>
 
         <label for="publico" class="required">3. Quem é o público-alvo?</label>
-        <input type="text" id="publico" name="3. Público Alvo" placeholder="Ex: Mulheres, 25 a 40 anos, de classe B/C" required>
+        <input type="text" id="publico" name="3. Público Alvo" required>
 
         <label for="diferencial" class="required">4. Qual o principal diferencial da loja?</label>
-        <textarea id="diferencial" name="4. Diferencial" placeholder="Ex: Foco em óculos polarizados, 1 ano de garantia, preço baixo, modelos exclusivos." required></textarea>
+        <textarea id="diferencial" name="4. Diferencial" required></textarea>
 
         <h2>II. Funcionalidades e Tecnologia</h2>
 
@@ -142,7 +139,7 @@
         </select>
         
         <label for="pagamento" class="required">6. Quais meios de pagamento são obrigatórios?</label>
-        <input type="text" id="pagamento" name="6. Meios de Pagamento" placeholder="Ex: PIX, Boleto e Cartão de Crédito" required>
+        <input type="text" id="pagamento" name="6. Meios de Pagamento" required>
 
         <label for="provador-virtual" class="required">7. O site precisa de Provador Virtual de Óculos?</label>
         <select id="provador-virtual" name="7. Provador Virtual" required>
@@ -153,35 +150,32 @@
         </select>
         
         <label for="integracoes">8. O site precisa de integração com outras ferramentas?</label>
-        <textarea id="integracoes" name="8. Integrações" placeholder="Ex: Instagram Shopping, botão flutuante de WhatsApp, Ferramenta de E-mail Marketing, ERP/Estoque."></textarea>
+        <textarea id="integracoes" name="8. Integrações"></textarea>
 
 
         <h2>III. Design e Referências</h2>
 
         <label for="cores" class="required">9. Quais são as cores principais da marca?</label>
-        <input type="text" id="cores" name="9. Cores da Marca" placeholder="Ex: Preto, Branco e um toque de Rosa Dourado" required>
+        <input type="text" id="cores" name="9. Cores da Marca" required>
 
         <label for="estilo" class="required">10. Qual o estilo visual desejado para o site?</label>
-        <input type="text" id="estilo" name="10. Estilo Visual" placeholder="Ex: Minimalista e Elegante / Moderno e Descolado" required>
+        <input type="text" id="estilo" name="10. Estilo Visual" required>
 
-        <label for="links-gosta" class="required">11. Envie 3 links de lojas virtuais que sua filha **gosta** (Layout, Cores, Organização):</label>
-        <textarea id="links-gosta" name="11. Links de Referência (Positivo)" placeholder="Ex: https://lojaa.com.br, https://lojaab.com.br, https://lojac.com.br" required></textarea>
+        <label for="links-gosta" class="required">11. Envie 3 links de lojas virtuais que sua filha **gosta**:</label>
+        <textarea id="links-gosta" name="11. Links de Referência (Positivo)" required></textarea>
         
-        <label for="links-nao-gosta">12. Envie 1 link de loja virtual que ela **NÃO gosta** (Para evitar erros):</label>
+        <label for="links-nao-gosta">12. Envie 1 link de loja virtual que ela **NÃO gosta**:</label>
         <input type="text" id="links-nao-gosta" name="12. Links de Referência (Negativo)">
         
         <h2>IV. Orçamento e Prazos</h2>
         
-        <label for="orcamento" class="required">13. Qual o orçamento para a criação/configuração inicial do site?</label>
-        <input type="text" id="orcamento" name="13. Orçamento Inicial" placeholder="Ex: R$ 3.000" required>
+        <label for="orcamento" class="required">13. Qual o orçamento para a criação/configuração inicial?</label>
+        <input type="text" id="orcamento" name="13. Orçamento Inicial" required>
 
         <label for="prazo-final" class="required">14. Qual o prazo máximo de entrega desejado?</label>
-        <input type="text" id="prazo-final" name="14. Prazo de Entrega" placeholder="Ex: 45 dias / Final do mês que vem" required>
+        <input type="text" id="prazo-final" name="14. Prazo de Entrega" required>
         
-        <label for="contato" class="required">15. Contato da Pessoa que Preencheu (E-mail)</label>
-        <input type="email" id="contato" name="15. E-mail para Contato" placeholder="email@exemplo.com" required>
-
-        <button type="submit">Baixar Briefing TXT</button>
+        <button type="submit">Enviar Briefing via WhatsApp</button>
     </form>
 
 </div>
@@ -190,36 +184,50 @@
     document.getElementById('briefingForm').addEventListener('submit', function(e) {
         e.preventDefault(); // Impede o envio padrão do formulário
 
+        // 1. **DEFINA SEU NÚMERO DE TELEFONE AQUI** (com código do país e DDD, sem espaços ou caracteres)
+        const SEU_NUMERO_WHATSAPP = "5562995436635"; // Exemplo: 55 (Brasil) 62 (DDD) 999999999 (número)
+        // ------------------------------------------------------------------------------------------------
+
         const form = e.target;
-        let data = "--- Briefing E-commerce Óculos ---\n\n";
+        let message = `*RESUMO DO BRIEFING - E-COMMERCE DE ÓCULOS*\n\n`;
+
+        // Coleta o nome do contato primeiro para o título da mensagem
+        const nomeContato = document.getElementById('nome-contato').value || "Cliente";
+        message += `*Enviado por: ${nomeContato}*\n\n`;
+        
+        let sectionTitle = "";
 
         // Itera sobre todos os elementos do formulário
         Array.from(form.elements).forEach(element => {
-            // Ignora o botão de submit e outros elementos que não são inputs de dados
             if (element.name && element.type !== 'submit') {
                 const labelElement = document.querySelector(`label[for="${element.id}"]`);
                 const labelText = labelElement ? labelElement.textContent.replace(' *', '').trim() : element.name;
-                let value = element.value;
+                const value = element.value.trim() || 'Não Informado';
 
-                // Formata a saída
-                data += `${labelText}:\n${value}\n\n`;
+                // Verifica se o texto da label indica uma nova seção para formatar melhor
+                if (labelText.startsWith('I.') || labelText.startsWith('II.') || labelText.startsWith('III.') || labelText.startsWith('IV.')) {
+                    // Adiciona quebra de linha para separar visualmente as seções
+                    message += "\n";
+                }
+                
+                // Ignora o nome do contato aqui pois já foi adicionado acima
+                if (element.id === 'nome-contato') return;
+
+                // Formata o par 'Pergunta: Resposta'
+                message += `*${labelText}:*\n${value}\n\n`;
             }
         });
 
-        // Cria o blob e o link de download
-        const filename = `Briefing_Oculos_${new Date().toLocaleDateString('pt-BR').replace(/\//g, '-')}.txt`;
-        const blob = new Blob([data], { type: 'text/plain' });
-
-        // Cria um link temporário para iniciar o download
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        // Remove quebras de linha excessivas e codifica para URL
+        const encodedMessage = encodeURIComponent(message.trim());
         
-        // Alerta opcional para instruir o usuário
-        alert("O arquivo TXT com as respostas foi baixado! Por favor, envie este arquivo para a equipe que fará o seu site.");
+        // Constrói o link do WhatsApp
+        const whatsappUrl = `https://wa.me/${SEU_NUMERO_WHATSAPP}?text=${encodedMessage}`;
+
+        // Abre a nova janela/aba do WhatsApp
+        window.open(whatsappUrl, '_blank');
+        
+        alert("O WhatsApp será aberto com o briefing preenchido. Você só precisa clicar em enviar!");
     });
 </script>
 
