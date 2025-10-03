@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing para Criação de E-commerce de Óculos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9; /* Fundo claro, estilo Google Forms */
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .header {
+            background-color: #673AB7; /* Cor roxa (pode ser personalizada) */
+            color: white;
+            padding: 20px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .form-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave, estilo Forms */
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #333;
+            border-bottom: 2px solid #673AB7;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea, select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #673AB7;
+            outline: none;
+            box-shadow: 0 0 0 1px #673AB7;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        button {
+            background-color: #673AB7;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #552a9e;
+        }
+        
+        .required::after {
+            content: " *";
+            color: red;
+        }
+
+        .instruction {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Briefing para Criação de E-commerce de Óculos</h1>
+        <p>Preencha este formulário para nos dar todos os detalhes do seu projeto de loja virtual.</p>
+    </div>
+
+    <form class="form-card" action="https://formspree.io/f/MOCK_ID_DO_FORMSPREE" method="POST">
+        <p class="instruction">
+            **Atenção:** Mude o campo `action` acima para o seu próprio link do Formspree.
+        </p>
+
+        <h2>I. Informações Essenciais</h2>
+        
+        <label for="nome-marca" class="required">1. Nome da Marca/Empresa</label>
+        <input type="text" id="nome-marca" name="Nome da Marca" required>
+
+        <label for="produtos" class="required">2. O que o site irá vender? (Liste os principais produtos)</label>
+        <textarea id="produtos" name="Produtos Vendidos" required></textarea>
+
+        <label for="publico" class="required">3. Quem é o público-alvo?</label>
+        <input type="text" id="publico" name="Público Alvo" placeholder="Ex: Mulheres, 25 a 40 anos, de classe B/C" required>
+
+        <label for="diferencial" class="required">4. Qual o principal diferencial da loja?</label>
+        <textarea id="diferencial" name="Diferencial" placeholder="Ex: Foco em óculos polarizados, 1 ano de garantia, preço baixo, modelos exclusivos." required></textarea>
+
+        <h2>II. Funcionalidades e Tecnologia</h2>
+
+        <label for="plataforma" class="required">5. Qual a plataforma de e-commerce preferida?</label>
+        <select id="plataforma" name="Plataforma E-commerce" required>
+            <option value="">Selecione...</option>
+            <option value="Nuvemshop">Nuvemshop</option>
+            <option value="Shopify">Shopify</option>
+            <option value="WooCommerce">WooCommerce (WordPress)</option>
+            <option value="Outra">Outra (especificar na próxima pergunta)</option>
+        </select>
+        
+        <label for="pagamento" class="required">6. Quais meios de pagamento são obrigatórios?</label>
+        <input type="text" id="pagamento" name="Meios de Pagamento" placeholder="Ex: PIX, Boleto e Cartão de Crédito (via Nuvem Pago/Mercado Pago)" required>
+
+        <label for="provador-virtual" class="required">7. O site precisa de Provador Virtual de Óculos?</label>
+        <select id="provador-virtual" name="Provador Virtual" required>
+            <option value="">Selecione...</option>
+            <option value="Sim_Obrigatorio">Sim, é obrigatório</option>
+            <option value="Sim_Opcional">Sim, mas é opcional se o custo for alto</option>
+            <option value="Nao">Não, apenas fotos de qualidade</option>
+        </select>
+        
+        <label for="integracoes">8. O site precisa de integração com outras ferramentas?</label>
+        <textarea id="integracoes" name="Integrações" placeholder="Ex: Instagram Shopping, botão flutuante de WhatsApp, Ferramenta de E-mail Marketing, ERP/Estoque."></textarea>
+
+
+        <h2>III. Design e Referências</h2>
+
+        <label for="cores" class="required">9. Quais são as cores principais da marca?</label>
+        <input type="text" id="cores" name="Cores da Marca" placeholder="Ex: Preto, Branco e um toque de Rosa Dourado" required>
+
+        <label for="estilo" class="required">10. Qual o estilo visual desejado para o site?</label>
+        <input type="text" id="estilo" name="Estilo Visual" placeholder="Ex: Minimalista e Elegante / Moderno e Descolado" required>
+
+        <label for="links-gosta" class="required">11. Envie 3 links de lojas virtuais que sua filha **gosta** (Layout, Cores, Organização):</label>
+        <textarea id="links-gosta" name="Links de Referência (Positivo)" placeholder="Ex: https://lojaa.com.br, https://lojaab.com.br, https://lojac.com.br" required></textarea>
+        
+        <label for="links-nao-gosta">12. Envie 1 link de loja virtual que ela **NÃO gosta** (Para evitar erros):</label>
+        <input type="text" id="links-nao-gosta" name="Links de Referência (Negativo)">
+        
+        <h2>IV. Orçamento e Prazos</h2>
+        
+        <label for="orcamento" class="required">13. Qual o orçamento para a criação/configuração inicial do site?</label>
+        <input type="text" id="orcamento" name="Orçamento Inicial" placeholder="Ex: R$ 3.000 (Sem contar mensalidades da plataforma/apps)" required>
+
+        <label for="prazo-final" class="required">14. Qual o prazo máximo de entrega desejado?</label>
+        <input type="text" id="prazo-final" name="Prazo de Entrega" placeholder="Ex: 45 dias / Final do mês que vem" required>
+        
+        <label for="contato" class="required">15. Contato para Retorno (Seu e-mail)</label>
+        <input type="email" id="contato" name="_replyto" placeholder="seu.email@exemplo.com" required>
+
+        <button type="submit">Enviar Briefing</button>
+    </form>
+
+</div>
+
+</body>
+</html>
