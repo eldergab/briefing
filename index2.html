@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Briefing - Loja Virtual</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 12px 20px;
+      background: #4285f4;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #3367d6;
+    }
+    .note {
+      font-size: 12px;
+      color: #555;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Briefing - Loja Virtual</h1>
+    <form id="briefingForm">
+      
+      <div class="question">
+        <label for="nome">Qual é o nome da sua marca/loja?</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+
+      <div class="question">
+        <label for="produtos">Quais produtos você deseja vender? (Ex: óculos de sol, acessórios...)</label>
+        <textarea id="produtos" name="produtos" required></textarea>
+      </div>
+
+      <div class="question">
+        <label for="quantidade">Quantos produtos diferentes pretende ter no site?</label>
+        <input type="number" id="quantidade" name="quantidade" min="1" required>
+      </div>
+
+      <div class="question">
+        <label for="pagamentos">Quais formas de pagamento você deseja aceitar?</label>
+        <select id="pagamentos" name="pagamentos" multiple required>
+          <option value="pix">PIX</option>
+          <option value="boleto">Boleto</option>
+          <option value="cartao_credito">Cartão de Crédito</option>
+          <option value="cartao_debito">Cartão de Débito</option>
+        </select>
+        <p class="note">Use Ctrl (ou Command no Mac) para selecionar mais de uma opção.</p>
+      </div>
+
+      <div class="question">
+        <label for="visual">Você gostaria de ter um provador virtual (para testar óculos online)?</label>
+        <select id="visual" name="visual" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+          <option value="talvez">Talvez, dependendo do custo</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="design">Como você imagina o design do site? (cores, estilo, referências)</label>
+        <textarea id="design" name="design"></textarea>
+      </div>
+
+      <div class="question">
+        <label for="manutencao">Você gostaria de contratar manutenção mensal para o site?</label>
+        <select id="manutencao" name="manutencao" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+          <option value="talvez">Talvez, dependendo do preço</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="orcamento">Qual é o orçamento disponível para criar o site?</label>
+        <input type="text" id="orcamento" name="orcamento" placeholder="Ex: até R$ 5.000">
+      </div>
+
+      <div class="question">
+        <label for="observacoes">Observações adicionais</label>
+        <textarea id="observacoes" name="observacoes"></textarea>
+      </div>
+
+      <button type="submit">Salvar Respostas</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('briefingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      let txtContent = "=== Briefing Loja Virtual ===\n\n";
+      
+      formData.forEach((value, key) => {
+        txtContent += `${key.toUpperCase()}: ${value}\n\n`;
+      });
+
+      const blob = new Blob([txtContent], { type: "text/plain;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "briefing-loja-virtual.txt";
+      link.click();
+    });
+  </script>
+</body>
+</html>
